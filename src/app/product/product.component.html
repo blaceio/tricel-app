@@ -1,0 +1,46 @@
+<app-alert></app-alert>
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>Products</strong>
+        </div>
+        <div class="card-block">
+          <table class="table table-hover table-outline mb-0 hidden-sm-down">
+            <thead class="thead-default">
+              <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Region</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <td>
+                  <div>{{product.id}}</div>
+                </td>
+                <td>
+                  <div>{{product.description}}</div>
+                </td>
+                <td>
+                  <div>{{product.type}}</div>
+                </td>
+                <td>
+                  <div>{{product.category}}</div>
+                </td>
+                <td>
+                  <div class="avatar">
+                    <img src="assets/img/flags/{{product.region}}.png" class="img-avatar" alt="{{product.region}}">
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
