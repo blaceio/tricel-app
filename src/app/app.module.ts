@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from "ngx-bootstrap";
 import { TypeaheadModule } from "ngx-bootstrap";
+import { DatePipe } from '@angular/common';
 
 import { MomentModule } from 'angular2-moment';
 
@@ -78,6 +79,9 @@ import { LoginComponent } from './login/login.component';
 import { AlertComponent } from './alert/alert.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductComponent } from './product/product.component';
+import { ProductfilterComponent } from './productfilter/productfilter.component';
+import { BudgetComponent } from './budget/budget.component';
+import { BudgetService } from 'app/shared/budget/budget.service';
 
 @NgModule({
   imports: [
@@ -103,7 +107,9 @@ import { ProductComponent } from './product/product.component';
     LoginComponent,
     AlertComponent,
     DashboardComponent,
-    ProductComponent
+    ProductComponent,
+    ProductfilterComponent,
+    BudgetComponent
   ],
   providers: [{
     provide: LocationStrategy,
@@ -114,7 +120,9 @@ import { ProductComponent } from './product/product.component';
   AlertService,
   DataalertService, 
   StaticDataService,
-  ProductService
+  ProductService,
+  BudgetService,
+  DatePipe
 ],
   bootstrap: [ AppComponent ]
 })

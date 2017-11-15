@@ -1,19 +1,19 @@
-import { Reference } from './reference';
-
 export class Product {
     public id: string = "";
     public description: string = "";
-    public types: Reference = new Reference();
-    public categories: Reference = new Reference();
-    public regions: Reference = new Reference();
+    public type: string = "";
+    public category: string = "";
+    public division: string = "";
+    public region: string = "";
 
 
     constructor() {
         this.id = "";
         this.description = "";
-        this.types = new Reference();
-        this.categories = new Reference();
-        this.regions = new Reference();
+        this.type = "";
+        this.category = "";
+        this.division = "";
+        this.region = "";
     }
 }
 

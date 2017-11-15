@@ -14,14 +14,17 @@ export class ProductService {
 
     constructor(private http: Http, private dataalertservice: DataalertService, private staticdataservice: StaticDataService, private alertservice: AlertService) { }
 
-    requestproducts(): Observable<Array<Product>> {
-        return this.http.get(this.staticdataservice.getproductssrequesturl())
+    requestproducts(id: string, type: string, category: string, division: string, region: string): Observable<Array<Product>> {
+        
+        let url = this.staticdataservice.getproductssrequesturl() + "id=" + id + "&type=" + type + "&category=" + category + "&division=" + division + "&region=" + region; 
+       
+        return this.http.get(url)
             .map(this.extractData)
             .catch(this.handleError);
     }
 
-    getproducts() {
-        this.requestproducts()
+    getproducts(id: string, type: string, category: string, division: string, region: string) {
+        this.requestproducts(id, type, category, division, region)
             .subscribe(
             response => this.processproducts(response),
             error => this.handleError(<any>error)

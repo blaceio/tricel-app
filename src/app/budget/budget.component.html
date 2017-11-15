@@ -1,0 +1,38 @@
+<app-alert></app-alert>
+<app-productfilter></app-productfilter>
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>Budget</strong>
+        </div>
+        <div class="card-block">
+          <table class="table table-hover table-outline mb-0 hidden-sm-down">
+            <thead class="thead-default">
+              <tr>
+                <th>Product</th>
+                <th>Period</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let budgetentry of budgetentries">
+                <td>
+                  <div class="small text-muted"><strong>Type:</strong> {{budgetentry.product.type}}<strong>, Category:</strong> {{budgetentry.product.category}}<strong>, Division:</strong> {{budgetentry.product.division}}<strong>, Region:</strong> <img style="height:20px;" src="assets/img/flags/{{budgetentry.product.region}}.png" alt="{{budgetentry.product.region}}"></div>
+                  <div>{{budgetentry.product.id}}</div>
+                </td>
+                <td>
+                  <div>{{budgetentry.period | amDateFormat:'MMM-YYYY'}}</div>
+                </td>
+                <td>
+                  <div>{{budgetentry.amount}}</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
