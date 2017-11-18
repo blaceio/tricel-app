@@ -1,0 +1,57 @@
+<form action="" method="post">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="icon-key"></i>
+            </span>
+            <input type="text" id="id" name="id" class="form-control" placeholder="ID" (focusout)="filterbyid($event)">
+            <span class="input-group-addon">
+              <i class="icon-tag"></i>
+            </span>
+            <input type="text" id="type" name="type" class="form-control" placeholder="Type" (focusout)="filterbytype($event)">
+            <span class="input-group-addon">
+              <i class="icon-info"></i>
+            </span>
+            <input type="text" id="category" name="category" class="form-control" placeholder="Category" (focusout)="filterbycategory($event)">
+            <span class="input-group-addon">
+              <i class="icon-share"></i>
+            </span>
+            <input type="text" id="division" name="division" class="form-control" placeholder="Division" (focusout)="filterbydivision($event)">
+            <span class="input-group-addon">
+              <i class="icon-globe"></i>
+            </span>
+            <input type="text" id="region" name="region" class="form-control" placeholder="Region" (focusout)="filterbyregion($event)">
+            <span class="input-group-addon">
+            <i class="icon-calendar"></i>
+            </span>
+            <select id="select2-1" class="form-control select2-single" (change)="filterbyperiod($event.target.value)">
+                    <option>Select Month</option>
+                    <option value=0>Jan</option>
+                    <option value=1>Feb</option>
+                    <option value=2>Mar</option>
+                    <option value=3>Apr</option>
+                    <option value=4>May</option>
+                    <option value=5>Jun</option>
+                    <option value=6>Jul</option>
+                    <option value=7>Aug</option>
+                    <option value=8>Sep</option>
+                    <option value=9>Oct</option>
+                    <option value=10>Nov</option>
+                    <option value=11>Dec</option>
+           </select>
+        </div>
+        </div>
+        <hr class="mx-3 my-0">
+        <br>
+        <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="icon-calculator"></i>
+                    </span>
+                    <input type="text" id="budgetupdate" name="budgetupdate" class="form-control" placeholder="Update Budget By %" (focusout)="updatebudget($event)">
+                </div>
+        </div>
+        <div class="form-group form-actions">
+            <button type="submit" class="btn btn-sm btn-success" (click)="sendbudgetupdate()">Update</button>
+        </div>
+</form>

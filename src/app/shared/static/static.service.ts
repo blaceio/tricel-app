@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 
 import { productsrequesturl } from 'app/shared/staticdata/urls'
-import { budgetentriesrequesturl } from 'app/shared/staticdata/urls'
+import { summaryentriesrequesturl } from 'app/shared/staticdata/urls'
+import { budgetupdateupdateurl } from 'app/shared/staticdata/urls'
 
 @Injectable()
 export class StaticDataService {
@@ -12,9 +13,13 @@ export class StaticDataService {
         return productsrequesturl;
     } 
 
-    getbudgetentriesrequesturl() : string {
-        return budgetentriesrequesturl;
+    getsummaryentriesrequesturl() : string {
+        return summaryentriesrequesturl;
     } 
+
+    getbudgetupdateupdateurl() : string {
+        return budgetupdateupdateurl;
+    }
     
 }
 

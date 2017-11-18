@@ -6,7 +6,7 @@ import { Subject } from 'rxjs/Subject';
 export class DataalertService {
   
   private productssubject = new Subject<any>();
-  private budgetentriessubject = new Subject<any>();
+  private summaryentriessubject = new Subject<any>();
   
     constructor() {}
      
@@ -14,15 +14,15 @@ export class DataalertService {
         this.productssubject.next(message);
     }
 
-    budgetentries(message: string) {
-        this.budgetentriessubject.next(message);
+    summaryentries(message: string) {
+        this.summaryentriessubject.next(message);
     }
 
     getProducts(): Observable<any> {
         return this.productssubject.asObservable();
     }
 
-    getBudgetentries(): Observable<any> {
-        return this.budgetentriessubject.asObservable();
+    getSummaryentries(): Observable<any> {
+        return this.summaryentriessubject.asObservable();
     }
  }

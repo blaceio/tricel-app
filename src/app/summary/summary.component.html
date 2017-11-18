@@ -1,0 +1,47 @@
+<app-alert></app-alert>
+<app-summaryupdate></app-summaryupdate>
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>Summary</strong>
+        </div>
+        <div class="card-block">
+          <table class="table table-hover table-outline mb-0 hidden-sm-down">
+            <thead class="thead-default">
+              <tr>
+                <th>Product</th>
+                <th>Period</th>
+                <th>Actual</th>
+                <th>Budget</th>
+                <th>Forecast</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let summaryentry of summaryentries">
+                <td>
+                  <div class="small text-muted"><strong>Type:</strong> {{summaryentry.product.type}}<strong>, Category:</strong> {{summaryentry.product.category}}<strong>, Division:</strong> {{summaryentry.product.division}}<strong>, Region:</strong> <img style="height:20px;" src="assets/img/flags/{{summaryentry.product.region}}.png" alt="{{summaryentry.product.region}}"></div>
+                  <div>{{summaryentry.product.id}}</div>
+                </td>
+                <td>
+                  <div>{{summaryentry.period | amDateFormat:'MMM-YYYY'}}</div>
+                </td>
+                <td>
+                  <div *ngIf="summaryentry.actual >= summaryentry.forecast" class="text-success">{{summaryentry.actual | number}}</div>
+                  <div *ngIf="summaryentry.actual < summaryentry.forecast" class="text-danger">{{summaryentry.actual | number}}</div>
+                </td>
+                <td>
+                  <div>{{summaryentry.budget | number}}</div>
+                </td>
+                <td>
+                  <div>{{summaryentry.forecast | number}}</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -80,8 +80,9 @@ import { AlertComponent } from './alert/alert.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductComponent } from './product/product.component';
 import { ProductfilterComponent } from './productfilter/productfilter.component';
-import { BudgetComponent } from './budget/budget.component';
-import { BudgetService } from 'app/shared/budget/budget.service';
+import { SummaryService } from 'app/shared/summary/summary.service';
+import { SummaryComponent } from './summary/summary.component';
+import { SummaryupdateComponent } from './summaryupdate/summaryupdate.component';
 
 @NgModule({
   imports: [
@@ -109,7 +110,8 @@ import { BudgetService } from 'app/shared/budget/budget.service';
     DashboardComponent,
     ProductComponent,
     ProductfilterComponent,
-    BudgetComponent
+    SummaryComponent,
+    SummaryupdateComponent
   ],
   providers: [{
     provide: LocationStrategy,
@@ -121,7 +123,7 @@ import { BudgetService } from 'app/shared/budget/budget.service';
   DataalertService, 
   StaticDataService,
   ProductService,
-  BudgetService,
+  SummaryService,
   DatePipe
 ],
   bootstrap: [ AppComponent ]

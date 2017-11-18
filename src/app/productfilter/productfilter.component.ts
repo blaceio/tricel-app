@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ProductService } from 'app/shared/product/product.service';
-import { BudgetService } from 'app/shared/budget/budget.service';
-import { DateRange } from 'app/shared/daterange/daterange';
 
 @Component({
   selector: 'app-productfilter',
@@ -11,17 +9,15 @@ import { DateRange } from 'app/shared/daterange/daterange';
 })
 export class ProductfilterComponent implements OnInit {
 
-  private daterange: DateRange;
   private id: string;
   private type: string;
   private category: string;
   private division: string;
   private region: string;
 
-  constructor(private productservice: ProductService, private budgetservice: BudgetService) { }
+  constructor(private productservice: ProductService) { }
 
   ngOnInit() {
-    this.daterange = new DateRange();
     this.id = "";
     this.type = "";
     this.category = "";
@@ -32,7 +28,6 @@ export class ProductfilterComponent implements OnInit {
 
   private refreshdata() {
     this.productservice.getproducts(this.id, this.type, this.category, this.division, this.region);
-    this.budgetservice.getbudgetentries(this.daterange.startdate, this.daterange.enddate, this.id, this.type, this.category, this.division, this.region);
   }
 
   private filterbyid(event: any) {

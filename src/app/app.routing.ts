@@ -4,7 +4,7 @@ import { AuthGuard } from 'app/shared';
 import { LoginComponent } from 'app/login/login.component';
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { ProductComponent } from 'app/product/product.component';
-import { BudgetComponent } from 'app/budget/budget.component';
+import { SummaryComponent } from 'app/summary/summary.component';
 
 // Import Containers
 import {
@@ -40,8 +40,8 @@ export const routes: Routes = [
         canActivate: [AuthGuard]
       },
       {
-        path: 'budget',
-        component: BudgetComponent,
+        path: 'summary',
+        component: SummaryComponent,
         canActivate: [AuthGuard]
       }
     ]

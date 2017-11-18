@@ -1,14 +1,18 @@
 import { Product } from "./product";
 
-export class Budgetentry {
+export class Summaryentry {
 
     public period: Date = new Date();
     public product: Product = new Product();
-    public amount: number = 0.;
+    public actual: number = 0.;
+    public budget: number = 0.;
+    public forecast: number = 0.;
     
     constructor() {
         this.period = new Date();
         this.product = new Product();
-        this.amount = 0.;
+        this.actual = 0.;
+        this.budget = 0.;
+        this.forecast = 0.;
     }
 }
